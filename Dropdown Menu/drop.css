@@ -1,0 +1,97 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_960_720.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    background-size: cover;
+    background-color: white;
+    font-family: 'Indie Flower', cursive;
+    margin: 0;
+    padding: 0;
+}
+.topnav {
+    width: 100%;
+    background-image: linear-gradient(violet, lightyellow);
+    border: 1px solid gray;
+    box-shadow: 2px 3px 3px -2px;
+    position: fixed;
+}
+.topnav ul {
+    list-style: none;
+    margin: 0 60px;
+    padding: 0;
+}
+.topnav ul li {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.topnav ul a {
+    display: block;
+    padding: 30px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    background: radial-gradient(ellipse at center, rgba(254, 252, 255, 0.6) 0%, rgba(0, 128, 128, 1) 100%);
+    font-size: 17px;
+    border: 1px groove white;
+    border-radius: 80%;
+    letter-spacing: 2px;
+    transition: 2s;
+}
+
+/*.topnav ul li:hover a{*/
+    /*transform: scale(1.5);*/
+    /*opacity: 0.2;*/
+    /*filter: blur(5px);*/
+/*}*/
+.topnav ul li a:hover {
+    transform: scale(0.9);
+    /*opacity: 3;*/
+    /*filter: blur(0);*/
+    background-color: fuchsia;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: 2s;
+
+}
+
+.topnav li ul {
+    display: none;
+    position: absolute;
+    min-width: 250px;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav li ul li {
+    width: 150px;
+}
+.topnav li ul li ul li{
+    width: 300px;
+}
+
+.topnav ul ul a {
+    text-decoration: none;
+    padding: 10px 25px;
+    background: powderblue;
+    /*transition: none;*/
+}
+
+.topnav li ul li ul {
+    position: absolute;
+    margin-left: 150px;
+    top: 0;
+}
+
+.topnav li:hover > ul {
+    display: block;
+}
+
+
+
+
+

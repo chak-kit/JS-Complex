@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework Form</title>
+    <link rel="stylesheet" href="fo_form.css">
+</head>
+<body>
+<form name="homework" action="/deleteUser" method="DELETE">
+
+    <p><label for="old_name"> User name: </label> <input type="text" name="username" placeholder="Kokos" minlength="5" id="old_name">
+        <input type="submit" value="Delete" class="click"></p>
+
+</form>
+
+<form action="/save" method="POST">
+    <fieldset>
+        <legend> Main information</legend>
+        <p><label for="name"> Name: </label> <input type="text" name="name" placeholder="Max" minlength="3" id="name"></p>
+        <p><label for="age">Age:</label><input type="number" name="age" placeholder="10500" min="1" max="10500" id="age"></p>
+        <input type="submit" value="Save" class="click">
+    </fieldset>
+</form>
+
+<form action="/addBook" method="POST">
+    <p><label for="book"> Book: </label> <input type="text" name="someBook" placeholder="enter your book" id="book"></p>
+    <p><label for="pages"> pages </label> <input type="number" name="pages" placeholder="355" id="pages">
+        <label for="rating"> rating </label><input type="number" name="rating" placeholder="10" id="rating">
+        <input type="submit" value="Send" class="click"></p>
+</form>
+<br>
+<hr>
+<form action="/findMovie" method="POST">
+    <p><label for="movie"> Movie: </label> <input type="text" name="someMovieName" id="movie">
+    <label for="on"> Cartoon </label> <input type="checkbox" name="isCartoon" id="on">
+    <label for="actor"> Actor: </label> <input type="text" name="mainActor" placeholder="Johny Dep" id="actor"></p>
+    <p><input type="submit" value="Send" class="click"></p>
+</form>
+
+
+</body>
+</html>
+
+невеличке ДЗ
+/deleteUser?username=kokos
+/save?name=max&age=10500
+/addBook?title=someBook&pages=355&rating=10
+/findMove?title=someMoveName&isCartoon=on&mainActor=johny depp
+/checkStatus?status=on

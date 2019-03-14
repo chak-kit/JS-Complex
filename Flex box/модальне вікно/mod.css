@@ -1,0 +1,30 @@
+
+
+
+.modal{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0, 0, 0.5);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal__body{
+    background: #fff;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+
+
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*right: 50%;*/
+   /*transform: translate(50%, -50%);*/
+}

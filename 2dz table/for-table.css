@@ -1,0 +1,47 @@
+table {
+    width: 80%;
+    padding: 30px;
+    /*!*border-collapse: collapse;*! перекриє empty-cells*/
+}
+
+th, tr, td {
+    border: 1px groove white;
+    background-color: whitesmoke;
+}
+
+th {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    background-color: blueviolet;
+    padding: 20px;
+    empty-cells: hide;
+}
+
+tr, td {
+    text-align: center;
+    font-size: 20px;
+}
+
+tr > td:first-child {
+    text-align: left;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.each-2 td:nth-child(2) {
+    background-color: lightblue;
+}
+
+.each-3 td:nth-child(3) {
+    background-color: lightblue;
+}
+
+.each-4 td:nth-child(4) {
+    background-color: lightblue;
+}
+
+.each-5 td:nth-child(5) {
+    background-color: lightblue;
+}
+
