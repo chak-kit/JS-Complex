@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. Три різних числа вводяться через prompt().
+    // За допомоги if else вивести іх в порядку зростання. (відсортувати по зростанню)
+    let number1 = +prompt("Введіть число");
+    let number2 = +prompt("next number");
+    let number3 = +prompt("last number");
+    console.log(number1, number2, number3);
+
+    if (number1 > number2 && number1 > number3 && number2 > number3) {
+        console.log(number1, number2, number3);
+    } else if (number1 > number2 && number1 > number3 && number3 > number2) {
+        console.log(number1, number3, number2);
+    } else if (number2 > number1 && number2 > number3 && number3 > number1) {
+        console.log(number2, number3, number1);
+    } else if (number2 > number1 && number2 > number3 && number1 > number3) {
+        console.log(number2, number1, number3);
+    } else if (number3 > number2 && number3 > number1 && number1 > number2) {
+        console.log(number3, number1, number2);
+    } else if (number3 > number2 && number3 > number1 && number2 > number1) {
+        console.log(number3, number2, number1);
+    }
+
+
+    let number = +prompt('Введіть число від 1 до 3');
+    let isRoadClear = confirm('Without cars');
+    switch (number) {
+        case 1:
+            isRoadClear ? console.log('Go') : console.log('ne Go');
+            break;
+        case 2:
+            console.log('Wait');
+            isRoadClear ? console.log('Still waiting') : console.log('Wait!');
+            break;
+        case 3:
+            console.log('Stop');
+            isRoadClear ? console.log('Still staying') : console.log('Stay and wait');
+            break;
+        default:
+            if (isRoadClear === undefined) {
+                console.log('Do what you want')
+            }
+            console.log('Do not work!')
+    }
+
+    console.log('___________________Cars:');
+    var cars = [car1 = {
+        marka: "BMV",
+        volume: 300,
+        owner: {
+            name: "Stepan",
+            age: 34,
+            expirience: 7
+        },
+        price: 33000,
+        year: 2017
+    },
+        car2 = {
+            marka: "Toyota",
+            volume: 300,
+            owner: {
+                name: "Ira",
+                age: 25,
+                expirience: 3
+            },
+            price: 30000,
+            year: 2018
+        },
+        car3 = {
+            marka: "Opel",
+            volume: 250,
+            owner: {
+                name: "Petro",
+                age: 50,
+                expirience: 20
+            },
+            price: 20000,
+            year: 2018
+        },
+        car4 = {
+            marka: "Reno",
+            volume: 250,
+            owner: {
+                name: "Ostap",
+                age: 19,
+                expirience: 1
+            },
+            price: 18000,
+            year: 2018
+        },
+        car5 = {
+            marka: "Lexus",
+            volume: 350,
+            owner: {
+                name: "Taras",
+                age: 34,
+                expirience: 10
+            },
+            price: 35000,
+            year: 2018
+        },
+        car6 = {
+            marka: "Mazda",
+            volume: 320,
+            owner: {
+                name: "Anton",
+                age: 27,
+                expirience: 4
+            },
+            price: 28000,
+            year: 2015
+        },
+        car7 = {
+            marka: "Porsche",
+            volume: 380,
+            owner: {
+                name: "Olya",
+                age: 26,
+                expirience: 4
+            },
+            price: 37000,
+            year: 2016
+        },
+        car8 = {
+            marka: "Lada",
+            volume: 200,
+            owner: {
+                name: "Panas",
+                age: 27,
+                expirience: 3
+            },
+            price: 8000,
+            year: 2016
+        },
+        cars9 = {
+            marka: "Kia",
+            volume: 280,
+            owner: {
+                name: "Denis",
+                age: 56,
+                expirience: 23
+            },
+            price: 16000,
+            year: 2014
+        }
+    ];
+    console.log(cars);
+
+    var newVolume;
+    let newPrice;
+    for (var i = 0; i < cars.length; i = i + 2) {
+        newVolume = Math.round(cars[i].volume * 1.1);
+        newPrice = Math.round(cars[i].price * 1.05);
+        cars[i].volume = newVolume;
+        cars[i].price = newPrice;
+        if (newVolume) {
+            console.log(cars[i].owner = 'I am new driver')
+        }
+        console.log(`New volume: ${newVolume}, new price: ${newPrice}`);
+        console.log(cars[i])
+    }
+
+    for (let x = 0; x < cars.length; x++) {
+        if (cars[x].owner.expirience < 5 && cars[x].owner.age > 25) {
+            console.log(`${cars[x].owner.name}: You need courses`);
+            cars[x].owner.expirience++;
+        }
+    }
+
+    var sum = 0;
+    for (let s = 0; s < cars.length; s++) {
+        sum = sum + cars[s].price;
+    }
+    console.log(`If you want all this cars, you must have: ${sum}`)
+
+
+</script>
+
+</body>
+</html>

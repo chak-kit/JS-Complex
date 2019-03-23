@@ -1,0 +1,64 @@
+﻿             DataBase/MySQL 
+create database if not exists yyy default character set utf8;(create database yyy)
+use yyy;
+create table person(
+ id int primary key auto_increment not null,
+ name varchar(25) default 'noname',
+ surname varchar(25) default 'nosurname',
+ age int default 0, 
+ hair TINYINT default 1
+ );
+Записуємо дані:
+ insert in person(name,surname, age, hair)
+  values
+		("Harry", "Potter", 20, 1),
+		("Germiona", "Greinjer", 19, 1),
+		("Big", "Berta", 45, 0),
+		("Mikky", "Mouse", 150, 0), 
+	
+ select * from person;
+ select name,surname from persons;
+ select * from person where age>19;	
+ select * from person where age between 19 and 35;
+ select * from person where id in (1,2,4);
+ select * from person where id not in (1,2,4);
+ select * from person where name= "Mikky";
+ select * from person where name like (%,_);
+ select * from person where age>100 and hair=0;
+ select * from person where age>100 or hair=0;
+
+
+alter tale person change suname surname varchar(20);
+ 
+ update persons set hair=0, age=0 where hair=1;
+ delete from persons where age=0;
+ drop table persons;
+ drop database yyy;
+
+            Створення 3тьої проміжної таблиці, для реалізації звязку багато до багатьох
+create table ref_person_car(
+ id int primary key auto_increment not null,
+ refPerson int,
+ refCar int,
+ primary key (id),
+ forein key ref_person_car(refPerson) references persons(id),
+ forein key ref_person_car(refCar) references cars(id); 
+);
+           Коли створюємо таблиці один до багатьох або Якщо б забули написати котрийсь з forein key (який потім легше видаляти)
+alter table ref_person_car
+add constraint xxx
+foreign key ref_person_car(refCar) references cars(id);
+ 
+alter table ref_person_car drop forein key xxx;
+
+insert into ref_person_car (refPerson, refCar)
+values
+      (1,1);
+      (1,2);
+      (2,1);
+      (3,2);
+      (4,1);
+      (4,2);
+
+  
+ 

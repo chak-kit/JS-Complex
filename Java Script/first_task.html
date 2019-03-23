@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //1. Якщо змінна a дорівнює нулю, то виведіть 'Вірно', інакше виведіть 'Невірно'.
+    //Перевірте роботу скрипта при a, що дорівнює 1, 0, -3
+    var a = -3;
+    if (a === 0) {
+        console.log("Вірно")
+    } else {
+        console.log("Невірно")
+    }
+    //2. В змінної min лежить число від 0 до 59.
+    // Визначте в яку чверть години потрапляє це число (в першу, другу, третю або четверту).
+    let min = Math.floor(Math.random() * 59);
+    console.log(min);
+    if (min === 0 || min < 15) {
+        console.log('Перша чверть');
+    } else if (min === 15 || min < 30) {
+        console.log('Друга чверть');
+    } else if (min === 30 || min < 45) {
+        console.log('Третя чверть');
+    } else if (min === 45 || min < 60) {
+        console.log('Четверта чверть');
+    }
+
+
+    //  3.Якщо змінна a дорівнює або менше 1, а змінна b більше або дорівнює 3, то виведіть суму цих змінних,
+    //  інакше виведіть їх різницю (результат віднімання).
+    //  Перевірте роботу скрипта при a і b, що дорівнює 1 і 3, 0 і 6, 3 і 5.
+
+    var a = 3;
+    var b = 5;
+
+    if (a <= 1 && b >= 3) {
+        console.log(a + b);
+    } else {
+        console.log(a - b);
+    }
+
+    // 4. В змінної month лежить якесь число з інтервалу від 1 до 12.
+    //Визначте в яку пору року потрапляє цей місяць (зима, літо, весна, осінь).
+
+    let month = Math.floor(Math.random() * 12) + 1;
+    console.log(month);
+    if (month >= 3 && month <= 5) {
+        console.log('Spring');
+    } else if (month >= 6 && month <= 8) {
+        console.log("Summer");
+    } else if (month >= 9 && month <= 11) {
+        console.log("Autumn");
+    } else {
+        console.log('Winter')
+    }
+
+
+    // 5. switch. Переменная num может принимать 4 значения: 1, 2, 3 или 4.
+    // Если она имеет значение '1', то в переменную result запишем 'зима', если имеет значение '2' – 'весна' и так далее.
+
+    var num = 3;
+    var result;
+    switch (num) {
+        case 1:
+            result = 'Winter';
+            break;
+        case 2:
+            result = 'Spring';
+            break;
+        case 3:
+            result = 'Summer';
+            break;
+        case 4:
+            result = 'Autumn';
+            break;
+    }
+    console.log(`result: ${result}`);
+
+
+    //6.Переменная num может принимать 12 значений: 1, 2 ..... 12. Если она имеет значение '1', то в переменную result запишем 'январь',
+    //если имеет значение '2' – 'февраль' и так далее.
+
+    let number = Math.floor(Math.random() * 12) + 1;
+
+    //7. Створити об'єкит, які характеризують членів вашої родини
+    var family = {
+        firstMember: {
+            name: 'Ira',
+            surname: 'Grynchuk',
+            age: 25,
+        },
+        secondMember: {
+            name: 'Taras',
+            surname: 'Grynchuk',
+            age: 33,
+        }
+    };
+
+    //зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та:
+    var arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+
+    //1. перебрати його циклом while
+
+    let i = 0;
+    while (i < arr.length) {
+        console.log(arr[i]);
+        i++;
+    }
+    let reverse1=[];
+    let d=arr.length-1;
+    while (d>=0){
+        reverse1.push(arr[d]);
+        d--;
+    }
+console.log(reverse1);
+
+    //2. перебрати його циклом for:
+    console.log("Перебір цилком for:");
+    for (var x = 0; x < arr.length; x++) {
+        console.log(arr[x])
+    }
+    //5. перебрати циклом while та вивести  числа тільки парні  значення
+
+    let y = 0;
+    while (y < arr.length) {
+        if (arr[y] % 2 === 0) {
+            console.log(arr[y]);
+        }
+        y++;
+    }
+    //3. перебрати циклом while та вивести  числа тільки з непарним індексом
+    let t = 0;
+    while (t < arr.length) {
+        if (arr[t] % 2 === 1) {
+            console.log(arr[t]);
+        }
+        t++;
+    }
+
+    //4. перебрати циклом for та вивести  числа тільки з непарним індексом
+    let even=[];
+    for (let r=0; r<arr.length; r++){
+        if (arr[r]%2===1){
+            even.push(arr[r]);
+        }
+    }
+    console.log(even);
+    //6. перебрати циклом for та вивести  числа тільки парні  значення
+    var rev=[];
+    for (var p=arr.length-1;p>=0; p--){
+        if (arr[p]%2===0){
+            rev.push(arr[p]);
+        }
+    }
+    console.log(rev);
+    //7. замінити кожне число кратне 3 на слово "okten"
+    // for (var k=0;k<arr.length; k++){
+    //     if (arr[k]%3===0){
+    //         arr[k]='okten';
+    //     }
+    // }
+    // console.log(arr);
+
+    //8. вивести масив в зворотньому порядку.
+    var arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+    var reverse = [];
+    for (var z = arr.length - 1; z >= 0; z--){
+        reverse.push(arr[z]);
+    }
+    console.log(reverse);
+
+</script>
+
+</body>
+</html>
+
+
+

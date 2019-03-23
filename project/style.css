@@ -18,51 +18,62 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-html, body{
+
+html, body {
     font-family: "Open Sans", serif;
     height: 100%;
 }
-.page{
+
+.page {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
 }
-.page__container{
+
+.page__container {
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
 
 }
-.page__banner{
+
+.page__banner {
     background: url("img/bg.jpg");
     width: 100%;
     background-size: cover;
 }
-.header{
+
+.header {
     position: absolute;
     left: 0;
     right: 0;
@@ -70,69 +81,138 @@ html, body{
     padding: 24px 0;
     z-index: 5;
 }
-.header__container{
+
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.nav{
- display: flex;
+
+.nav {
+    display: flex;
 }
-.nav__item + .nav__item{
+
+.nav__item + .nav__item {
     padding-left: 60px;
 }
-.nav__link{
+
+.nav__link {
     text-decoration: none;
     color: #ffffff;
     opacity: 0.7;
     font-size: 14px;
 }
-.hero-banner{
+
+.hero-banner {
     margin-top: 280px;
     text-align: center;
     width: 100%;
     color: white;
 }
-.hero-banner__title{
+
+.hero-banner__title {
     font-family: 'Lora', serif;
     font-size: 58px;
     font-weight: 700;
     height: 61px;
     padding-bottom: 34px;
 }
-.hero-banner__desc{
+
+.hero-banner__desc {
     font-size: 25px;
     height: 26px;
     padding-bottom: 88px;
 }
 
-.hero-banner__footer{
+.hero-banner__footer {
     width: 320px;
     height: 72px;
     margin: 0 auto;
     padding-bottom: 150px;
 }
-.hero-banner__link{
+
+.hero-banner__link {
     font-size: 25px;
     color: white;
     background-color: #00a5ff;
     text-decoration: none;
     padding: 25px 60px;
     display: inline-block;
-    border-radius:36px;
+    border-radius: 36px;
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
 }
-.page__section{
+
+.page__section {
     padding-top: 73px;
     background: #ffffff;
 }
-.page__title{
+
+.page__title {
     font-family: 'Lora', serif;
     font-size: 42px;
     color: #3a3f4b;;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-   height: 32px;
+    padding-bottom: 25px;
+
+}
+
+.line {
+    border-top: 4px solid #00a5ff;
+    width: 147px;
+    margin: 0 auto;
+    /*padding-bottom: 370px;*/
+}
+
+.service__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 100px;
+}
+
+.service__container {
+    flex: 0 1 25%;
+    max-width: 25%;
+    text-align: center;
+
+}
+
+.service__icon {
+    width: 100%;
+}
+
+.service__icon > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.service__title {
+    margin-top: 18px;
+
+}
+
+.name__service__title {
+    height: 14px;
+    color: #3a3f4b;
+    font-family: 'Lora', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.35px;
+    margin-bottom: 35px;
+}
+
+.service__description {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.9px;
+    font-family: "Open Sans", sans-serif;
+    width: 252px;
+    color: #999999;
+    line-height: 20px;
+    margin: 0 auto;
+
 
 }
