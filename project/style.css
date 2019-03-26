@@ -90,6 +90,7 @@ html, body {
 
 .nav {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav__item + .nav__item {
@@ -155,7 +156,6 @@ html, body {
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 25px;
-
 }
 
 .line {
@@ -167,8 +167,8 @@ html, body {
 
 .service__menu {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: center;
     margin: 100px;
 }
 
@@ -176,7 +176,11 @@ html, body {
     flex: 0 1 25%;
     max-width: 25%;
     text-align: center;
+    margin-right: 50px;
+}
 
+.service__container:nth-child(4) {
+    margin-right: 0;
 }
 
 .service__icon {
@@ -190,7 +194,6 @@ html, body {
 
 .service__title {
     margin-top: 18px;
-
 }
 
 .name__service__title {
@@ -212,7 +215,45 @@ html, body {
     width: 252px;
     color: #999999;
     line-height: 20px;
+}
+
+.next__header__container {
+    width: 570px;
+    text-transform: uppercase;
     margin: 0 auto;
-
-
+    padding-top: 63px;
+}
+.next__page__section {
+    background: #f5f6f8;
+}
+.next__nav__link{
+    color: #999999;
+    font-size: 14px;
+    text-decoration: none;
+}
+.next__page__title{
+    margin-top: 40px;
+}
+.foto__navigation{
+    margin-top: 50px;
+}
+.nav__foto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.foto__nav__item{
+    flex: 0 1 25%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: #f4f5f9;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+.foto__nav__item:nth-child(3n){
+    margin-right: 0;
+}
+.foto__title{
+    font-size: 18px;
+    color: #999999;
+    padding: 30px;
 }
