@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    //створити функції які :
+    //1. приймають три числа та виводить та повертає найменьше.
+    //2. приймають три числа та виводить та повертає найбільше.
+
+    function getRandomNum(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    function getRandomArr(capacity, min, max) {
+        let arr = [];
+        for (let i = 0; i < capacity; i++) {
+            let randomNum = getRandomNum(min, max);
+            arr.push(randomNum);
+        }
+        return arr;
+    }
+
+
+    function getRandomByMyself(){
+        let capacity = +prompt('Enter capacity');
+        let min = +prompt('Enter min number');
+        let max = +prompt('Enter max number');
+        return getRandomArr(capacity, min, max);
+    }
+
+
+    function getMax(array) {
+        let max = array[0];
+        for (let x = 1; x < array.length; x++) {
+            if (max < array[x]) {
+                max = array[x];
+            }
+        }
+        return max;
+    }
+
+    function getMin(array) {
+        let min = array[0];
+        for (let y = 1; y < array.length; y++) {
+            if (min > array[y]) {
+                min = array[y];
+            }
+        }
+        return min;
+    }
+
+    let array = getRandomByMyself();
+    console.log(`Array: ${array}`);
+
+    let sort1 = array.sort(function (a,b) {
+        return a-b;
+    });
+    console.log(`I am sorted array from min to max: ${sort1}`);
+
+    let sort2 = array.sort(function (a,b) {
+        return b-a;
+    });
+    console.log(`I am sorted array from max to min: ${sort2}`);
+
+
+    let maxNum = getMax(array);
+    console.log(`Max number from array: ${maxNum}`);
+
+    let minNum = getMin(array);
+    console.log(`Min number from array: ${minNum}`);
+
+
+
+
+    function minNumber1(a, b, c) {
+        const min = Math.min(a, b, c);
+        const max = Math.max(a, b, c);
+        console.log(min);
+        console.log(a,b,c);
+        return(max);
+    }
+    console.log(minNumber1());
+
+
+    function get() {
+        var a = +prompt('a');
+        var b = + prompt('b');
+        var c = +prompt('c');
+        return minNumber1(a, b, c)
+    }
+    get();
+
+    //
+    //
+    // function minNumber(a, b, c) {
+    //     const arr= [a,b,c];
+    //     let min=a;
+    //     for (let i=0; i<arr.length; i++){
+    //         console.log(arr[i]);
+    //     }
+    // }
+    // minNumber(2,6,9)
+
+
+    // function fool(num) {
+    //     return num.toString().split('').reverse().sort().join('');
+    // }
+    // console.log(fool(1234567));
+    //
+    //
+    function minNumber() {
+        const min = Math.min(...arguments);
+        return min;
+    }
+    const minNumb = minNumber(23, 6, 9, 89);
+    console.log(minNumb);
+
+
+    function maxNumber() {
+        let max = arguments[0];
+        for (var i = 1; i < arguments.length; i++) {
+            if (max < arguments[i]) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+    console.log(maxNumber(11, 6, 50, 6, 5, 65, 123, 5));
+
+
+    // приймає масив та число (i). та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+    function change (...arg){
+        for (let i=0; i<arg.length; i++){
+            arg[i]=arg[i+1];
+        }
+        console.log(arg[4])
+    }
+    change(4,6,7,8,5,7,8,9,33);
+
+
+</script>
+</body>
+</html>
