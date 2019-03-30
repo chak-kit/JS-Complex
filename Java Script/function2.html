@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Все робити через функції масивів (foreach, map ...тд)
+    // 1 створити масив з 10 елементів, заповнити його парними значеннями (2 4 6 8 10 ...).
+    // 2 створити масив з 10 елементів, заповнити його цілими рандомними значеннями(Math.random)
+
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    copy = [];
+    array.forEach(function (item) {
+        if (item % 2 === 0) {
+            copy.push(item);
+        }
+    });
+    console.log(copy);
+
+    function getRandom(capacity) {
+        let arr = [];
+        for (var i = 0; i < capacity; i++) {
+            value = Math.floor(Math.random() * 100);
+            arr.push(value);
+        }
+        return arr;
+    }
+    function setNum() {
+        let capacity = +prompt('Enter ten, please!');
+        return getRandom(capacity);
+    }
+    let array1 = setNum();
+    console.log(array1)
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+    //відсортувати його за  віком (зростання , а потім окремо спадання)
+    // let sort1 = users.sort(function (a,b) {
+    //     if (a.age > b.age){
+    //         return 1;
+    //     }
+    //     else {
+    //     return -1;
+    //     }
+    // });
+    // console.log(sort1);
+
+    //відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+     let sort2 = users.sort(function (a,b) {
+         return  a.name.length - b.name.length
+     });
+        console.log(sort2)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
