@@ -35,7 +35,7 @@
         return getRandom(capacity);
     }
     let array1 = setNum();
-    console.log(array1)
+    console.log(array1);
 
 
     let users = [
@@ -66,14 +66,43 @@
      let sort2 = users.sort(function (a,b) {
          return  a.name.length - b.name.length
      });
-        console.log(sort2)
+        console.log(sort2);
 
+    //- виконати певні фільтрації(по вікові, імені...)
 
+    let b = users.filter(value => {
+        return value.age>30;
+    });
+    console.log(b);
 
+    let usersName = users.filter(item => {
+        return item.name.length<4;
+    });
+    console.log(usersName);
 
+    //зробити всіх старшими на рік
 
+    let plusYear= users.map(value => {
+        return value.age + 1;
+    });
+    console.log(plusYear);
 
+//знайти перший/останній індекс об'єкта в якого ім'я макс
 
+    let findMax = users.map(value => {
+        return value.name;
+    }).indexOf('max');
+    console.log(findMax);
+
+    //- удалити всіх в проміжку інексів від 3 до 6
+   let deltUsers = users.splice(3, 4);
+    console.log(deltUsers);
+
+    //- замінити 5 елемент на інший
+    var a = users[5];
+    users[5] = users[0];
+    users[0] = a;
+    console.log(users);
 
 
 
