@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const inventors = [
+        {first: 'Albert', last: 'Einstein', year: 1879, passed: 1955},
+        {first: 'Isaac', last: 'Newton', year: 1643, passed: 1727},
+        {first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642},
+        {first: 'Marie', last: 'Curie', year: 1867, passed: 1934},
+        {first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630},
+        {first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543},
+        {first: 'Max', last: 'Planck', year: 1858, passed: 1947},
+        {first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979},
+        {first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852},
+        {first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905},
+        {first: 'Lise', last: 'Meitner', year: 1878, passed: 1968},
+        {first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909}
+    ];
+
+    //Вивести масив винахідників які народились в 1500-х роках.
+
+    let usersYears = inventors.filter(value =>
+        value.year >= 1500 && value.year < 1600
+    );
+    console.log(usersYears);
+
+    //Вивести масив тільки імен винахідників які народились в 1800-х роках
+
+    let inventorsYears = inventors.filter(value =>
+        value.year >= 1800 && value.year < 1900
+    ).map(value => value.first);
+    console.log(inventorsYears);
+
+    //Вивести масив з імен та прізвищ винахідників (['Albert Einstein', ... ])
+    newArray = inventors.map(value => value.first.concat(' ').concat(value.last));
+    console.log(newArray);
+
+    //Відсортувати винахідників за кількістю прожитих років
+    let inventorsSort = inventors.sort((a, b) => {
+        return (a.passed - a.year) - (b.passed - b.year);
+
+        // if (a.passed - a.year > b.passed - b.year) {
+        //     return 1;
+        // }
+        // if (b.passed - b.year<a.passed - a.year){
+        //     return -1;
+        // }
+        // return 0
+    });
+    console.log(inventorsSort);
+
+    //Відсортувати людей але тільки за прізвищем
+    let lastName = inventors.sort((a, b) => {
+        return a.last.localeCompare(b.last)
+    });
+    console.log(lastName);
+
+
+    const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+
+    let sortPeoples = people.sort((a, b) => {
+        let firstName = a.split(', ')[0];
+        let secondName = b.split(', ')[0];
+        return firstName.localeCompare(secondName);
+    });
+    console.log(sortPeoples);
+
+    let sort2 = people.map(value => value.split(', ')[0]
+    ).sort();
+    console.log(sort2);
+
+    //* Знайдіть суму років які прожили всі винахідники разом
+    let sum = inventors.reduce((accumulator, current)=>{
+       let years = current.passed - current.year;
+      return accumulator + years;
+    }, 0);
+    console.log(sum);
+
+    //* Знайти суму кожного типу транспорту, які є в масиві
+    const transport = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
+
+
+    // let models = new Map();
+    // transport.forEach(value => {
+    //     let count = models.get(value);
+    //     if (count){
+    //         models.set(value, count+1);
+    //     } else{
+    //         models.set(value, 1);
+    //     }
+    // });
+    // console.log(models);
+
+    let result = transport.reduce((models, value)=>{
+        let count = models.get(value);
+        if (count) {
+            models.set(value, count + 1);
+        } else {
+            models.set(value, 1);
+        }
+        return models;
+    }, new  Map());
+
+    console.log(result);
+
+
+</script>
+</body>
+</html>
