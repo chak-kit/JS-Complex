@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Figure {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+
+    class Square extends Figure {
+        constructor(name, height) {
+            super(name);
+            this.height = height;
+        }
+
+        calcArea() {
+            return this.height * this.height;
+        }
+
+        get area() {
+            return this.calcArea();
+        }
+    }
+
+    class Circle extends Figure {
+        constructor(name, radius) {
+            super(name);
+            this.radius = radius;
+        }
+
+        formula() {
+            return this.radius * this.radius * Math.PI;
+        }
+
+        get area() {
+            return this.formula();
+        }
+
+        set newRadius(value) {
+            this.radius = value;
+        }
+    }
+
+    const circle = new Circle('radius', 10);
+    console.log(circle.formula());
+    console.log(circle);
+    circle.newRadius = 5;
+    console.log(circle.formula());
+
+    const newSquare = new Square('Square', 20);
+    console.log(newSquare);
+
+
+    class Car {
+        constructor(model, cost, aim, maxSpead, graduaitionYear) {
+            this.model = model;
+            this.cost = cost;
+            this.aim = aim;
+            this.maxSpead = maxSpead;
+            this.graduaitionYear = graduaitionYear;
+        }
+
+        greet() {
+            console.log('Hello ' + this.model)
+        }
+    }
+
+    Car.prototype.info = function () {
+        return this.model + ' ' + this.cost + ' ' + this.price;
+    };
+
+
+
+    // class Array1 {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //
+    //     greet() {
+    //         console.log('Hello' + ' ' + this.name);
+    //     }
+    // }
+    //
+    // let array = new Array1('Max');
+    // array.greet();
+
+    // Closures
+    function calculate(x) {
+        return function (y) {
+            return x * y;
+        }
+    }
+
+    let a = calculate(1);
+    let num1 = a(4);
+    let num2 = a(2);
+    console.log(num1);
+    console.log(num2);
+
+    function counter() {
+        let count = 0;
+        return function () {
+            return count++
+        }
+    }
+
+    const myCounter = counter();
+    myCounter();
+    myCounter();
+    console.log(myCounter());
+
+
+    // Інкапсуляція, створена внутрішня змінна name, через  функцію замикання
+    const user = (function () {
+        let name = 'Me';
+
+        function getName() {
+            return name;
+        }
+
+        function setName(value) {
+            name = value
+        }
+
+        return {
+            getName: getName,
+            setName: setName,
+        }
+    })();
+    console.log(user.getName());
+    user.setName('Natalia');
+    console.log(user.getName());
+
+
+    // const count = (function () {
+    //     let num = 0;
+    //
+    //     function getNamber() {
+    //         return num;
+    //     }
+    //
+    //     function increment() {
+    //         return num++;
+    //     }
+    //
+    //     function decrement() {
+    //         return num--;
+    //     }
+    //
+    //     return {
+    //         getNamber: getNamber,
+    //         increment: increment,
+    //         decrement: decrement,
+    //     }
+    // })();
+    //
+    // console.log(count.getNamber());
+    // count.increment();
+    // count.increment();
+    // count.increment();
+    // console.log(count.getNamber());
+
+
+    class Count {
+        constructor(num) {
+            this._num = num;
+        }
+        get num() {
+            return this._num;
+        }
+         increment(){
+             this.num ++
+        }
+
+        set num(value) {
+            this._num = value;
+        }
+    }
+    const count = new Count(2);
+    console.log(count.num);
+    count.increment();
+    count.increment();
+    console.log(count.num);
+
+
+    //Метод привязки call/ apply/ bind
+    function add(a, b) {
+        return a + b + this.a + this.b;
+    }
+
+    obj = {
+        a: 1,
+        b: 2
+    };
+
+    const useCall = add.call(obj, 3, 4);
+    const useApply = add.apply(obj, [3, 4]);
+
+    console.log(useCall);
+    console.log(useApply);
+
+    //BiND
+    const userBind = add.bind(obj);
+    const resBind = userBind(3, 4);
+    console.log(resBind);
+
+
+    //Рекурсія!!!!
+    function sum(n) {
+
+        if (n === 0) {
+            return 0;
+        } else {
+            return n + sum(n - 1);
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
