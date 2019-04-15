@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    </style>
+</head>
+<body>
+<form>
+    <div class="form-group">
+        <label for="myName">My name</label>
+        <input type="text" class="form-control" id="myName" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="myAddress">My address</label>
+        <input type="text" class="form-control" id="myAddress">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<form id="form3">
+    <fieldset>
+        <label for="us_name">Your name</label>
+        <input type="text" id="us_name">
+        <label for="us_age">Your age</label>
+        <input type="number" id="us_age" min="5" max="100">
+    </fieldset>
+    <p>
+        <input type="radio" value="Male" name="gender"> Male
+        <input type="radio" value="Female" name="gender"> Female
+    </p>
+    <p>
+        <label for="check1">I want sleep </label>
+        <input type="checkbox" id="check1" name="check1">
+        <label for="check2">I want drink </label>
+        <input type="checkbox" id="check2" name="check2">
+        <label for="check3">I want eat </label>
+        <input type="checkbox" id="check3" name="check3">
+    </p>
+    <select id="select">
+        <option>Зима</option>
+        <option>Весна</option>
+        <option>Літо</option>
+        <option>Осінь</option>
+    </select>
+    <input type="submit" value="Submit" id="send">
+
+</form>
+
+</body>
+</html>
+<script>
+    const myName = document.querySelector('#myName');
+    const myAddress = document.querySelector('#myAddress');
+    const form = document.querySelector('form');
+
+    const fromLocalStorage = JSON.parse(window.localStorage.getItem('obj'));
+    // myName.value = fromLocalStorage && fromLocalStorage.name ? fromLocalStorage.name : "";
+    // myAddress.value = fromLocalStorage && fromLocalStorage.address ? fromLocalStorage.address : "";
+
+    myName.value = "";
+    if (fromLocalStorage) {
+        if (fromLocalStorage.name) {
+            myName.value = fromLocalStorage.name;
+        }
+    }
+
+    if (fromLocalStorage && fromLocalStorage.name) {
+        myName.value = fromLocalStorage.name;
+    } else {
+        myName.value = "";
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const obj = {
+            name: myName.value,
+            address: myAddress.value,
+        };
+        window.localStorage.setItem('obj', JSON.stringify(obj));
+        console.log(obj)
+    });
+
+    /////////
+    let form3 = document.getElementById('form3');
+    let usName = document.getElementById('us_name');
+    let usAge = document.getElementById('us_age');
+    let usSleep = document.getElementById('check1');
+    let usDrink = document.getElementById('check2');
+    let usEat = document.getElementById('check3');
+    let select = document.getElementById('select');
+
+    form3.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let genderValue;
+        if (document.querySelector('input[name="gender"]:checked') !== null) {
+            genderValue = document.querySelector('input[name="gender"]:checked').value;
+        }
+        const usObj = {
+            name: usName.value,
+            age: usAge.value,
+            gender: genderValue,
+            sleep: usSleep.checked,
+            drink: usDrink.checked,
+            eat: usEat.checked,
+            select: select.value
+        };
+        window.localStorage.setItem('usObject', JSON.stringify(usObj));
+        console.log(usObj)
+    });
+
+    let usLocal = JSON.parse(window.localStorage.getItem('usObject'));
+
+    if (usLocal){
+        if (usLocal.name && usLocal.age && usLocal.sleep && usLocal.drink && usLocal.eat && usLocal.select) {
+        usName.value = usLocal.name;
+        usAge.value = usLocal.age;
+        usSleep.checked = usLocal.sleep;
+        usDrink.checked = usLocal.drink;
+        usEat.checked = usLocal.eat;
+        select.value = usLocal.select;
+    } }else {
+        usName.value = '';
+        usAge.value ='';
+        usSleep.checked ='';
+        usDrink.checked ='';
+        usEat.checked ='';
+        select.value = '';
+    }
+
+    if (usLocal){
+        if ( usLocal.gender ) {
+            genderValue = usLocal.gender;
+        } }else {
+        genderValue = '';
+    }
+
+
+
+</script>
