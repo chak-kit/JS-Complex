@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="text">
+    <button id="back">Back</button>
+    <button id="forward">Forward</button>
+    <textarea id="myTextarea" rows="4" cols="40"></textarea>
+    <input type="submit" value="send">
+
+</form>
+
+</body>
+</html>
+<script>
+    //////////
+    let myText = document.getElementById('myTextarea');
+    let myForm = document.getElementById('text');
+    let back = document.getElementById('back');
+    let forward = document.getElementById('forward');
+
+    myForm.addEventListener('submit', send);
+
+    function send(e) {
+        e.preventDefault();
+        const text = {
+            information: myText.value
+        };
+        window.localStorage.setItem('text', JSON.stringify(text));
+        console.log(text);
+    }
+
+    let local = JSON.parse(window.localStorage.getItem('text'));
+
+    if (local && local.information) {
+        myText.value = local.information;
+    } else {
+        myText.value = '';
+    }
+    
+    back.onclick = function () {
+       window.history.back()
+    };
+    forward.onclick = function () {
+        window.history.forward()
+    };
+</script>

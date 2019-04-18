@@ -6,8 +6,158 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #block_id {
+            height: 200px;
+            width: 200px;
+            background: orange;
+        }
+
+        table {
+            width: 400px;
+        }
+
+        tr, td {
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
+<div class="block" id="block_id"> Hello</div>
+<input type="number" id="block_num" min="200" max="600" step='5'>
+<form name="info">
+    <input type="text" value="name" name="userName">
+    <input type="text" value="password" name="userPassword">
+</form>
+
+<table id="main_tb_container"></table>
+
+<input type="text" id="text">
+<p id='message'></p>
+
+
+<input type="number" id="num" min="5" max="100">
+<button id="ok"> OK</button>
+
 </body>
 </html>
+
+<script>
+    //- створити дві форми , по два інпути в кожній
+    //     ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих форм
+    let forma = document.querySelector('input');
+    forma.onclick = function () {
+        console.log(document.forms.info.userName.value);
+        console.log(document.forms.info.userPassword.value)
+    };
+
+    let block1 = document.getElementsByClassName('block')[0];
+    let block_id = document.getElementById('block_id');
+    let block_div = document.getElementsByTagName('div')[0];
+
+    block1.onclick = function () {
+        block1.innerText = "Goodbye! "
+    };
+    block_id.onmousedown = function () {
+        block_id.style.color = 'white';
+        block_id.style.textAlign = 'center';
+    };
+
+    function getRandomColor(red, green, blue) {
+        return `rgb( ${red}, ${green}, ${blue})`;
+    }
+
+    block_div.onmousemove = function (event) {
+        block_div.style.background = getRandomColor(event.clientX, event.clientY, event.screenX)
+    };
+    block_div.onmouseleave = function () {
+        block_div.style.background = 'green'
+    }
+
+
+    //- Створити функцію, яка генерує таблицю, перший аргумент визначає кількість строк,
+    // а другий параметр визначає кліькіть ячеєк в кожній строці.
+    //    третій параметр визначає елемент в який потрібно таблицю додати
+
+    var table = document.getElementById('main_tb_container');
+    function foo(lol, kok) {
+        lol = [6, 5, 6];
+        kok = [5, 6, 7, 8, 9];
+        for (var i = 1; i <= lol.length; i++) {
+            var tr = document.createElement('tr'); //создаем tr-ку
+
+            //Заполняем tr-ку td-шками:
+            for (var j = 1; j <= kok.length; j++) {
+                var td = document.createElement('td'); //создаем td-шку
+                td.innerHTML = Math.floor(Math.random() * 10); //пишем в нее текст
+
+                tr.appendChild(td); //добавляем созданную td-шку в конец tr-ки
+            }
+
+            table.appendChild(tr); //добавляем созданную tr-ку в конец таблицы
+        }
+    }
+    foo();
+
+    //- Сворити масив не цензцрних слів.
+    //   Сворити інпут текстового типу.
+    //       Якщо людина вводить слово і воно міститься в масиві не цензурних слі кинути алерт з попередженням.
+    // Робимо попередню логіку цікавішею.
+    //Все те саме, але тепер потрібно перевіряти чи не містить ціле речення в собі погані слова
+
+    array = ['js', 'java', 'closures', 'bind', 'call', 'apply', 'prototype'];
+
+    console.log(array);
+    text.oninput = function () {
+        let enteredText = document.getElementById('text').value;
+        let words = enteredText.split(' ');
+
+
+        let textBad;
+        for (let word of words) {
+            for (let badWord of array) {
+                if (word.toLowerCase() === badWord) {
+                    textBad = true;
+                }
+            }
+        }
+
+        //let textBad = array.some(value => value == enteredText.toLowerCase());
+
+        if (textBad) {
+            document.getElementById('message').innerHTML = 'Bad word ';
+        } else {
+            document.getElementById('message').innerHTML = 'You wrote: ' + enteredText;
+        }
+    };
+
+    //створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    //При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
+    let ok = document.getElementById('ok');
+    let age = document.getElementById('num');
+    ok.onclick = function () {
+        if (age.value < 18) {
+            console.log('You are young');
+        } else {
+            console.log('You are old')
+        }
+    };
+
+    //Створити інпут з бігунком та блок 200*200, при переміщені бігунка блок збільшує свою ширину пропорційно.
+    //    Задати бігунку мінімальні значення в 200 максимальне в 600
+    let block = document.getElementById('block_id');
+    let onimputNumber = document.getElementById('block_num');
+
+    onimputNumber.oninput = function (event) {
+        block.style.height = event.target.value + 'px';
+        block.style.width = event.target.value + 'px';
+    }
+
+
+
+
+</script>

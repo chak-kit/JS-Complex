@@ -32,8 +32,8 @@
         <input type="number" id="us_age" min="5" max="100">
     </fieldset>
     <p>
-        <input type="radio" value="Male" name="gender"> Male
-        <input type="radio" value="Female" name="gender"> Female
+        <input type="radio" value="Male" name="gender" id="radio_male"> Male
+        <input type="radio" value="Female" name="gender" id="radio_female"> Female
     </p>
     <p>
         <label for="check1">I want sleep </label>
@@ -92,6 +92,8 @@
     let form3 = document.getElementById('form3');
     let usName = document.getElementById('us_name');
     let usAge = document.getElementById('us_age');
+    let usMale = document.getElementById('radio_male');
+    let usFemale = document.getElementById('radio_female');
     let usSleep = document.getElementById('check1');
     let usDrink = document.getElementById('check2');
     let usEat = document.getElementById('check3');
@@ -100,14 +102,17 @@
     form3.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        let genderValue;
-        if (document.querySelector('input[name="gender"]:checked') !== null) {
-            genderValue = document.querySelector('input[name="gender"]:checked').value;
-        }
+        // let genderValue;
+        // if (document.querySelector('input[name="gender"]:checked') !== null) {
+        //     genderValue = document.querySelector('input[name="gender"]:checked').value;
+        // }
+
+
         const usObj = {
             name: usName.value,
             age: usAge.value,
-            gender: genderValue,
+            genderM: usMale.checked,
+            genderF: usFemale.checked,
             sleep: usSleep.checked,
             drink: usDrink.checked,
             eat: usEat.checked,
@@ -119,29 +124,50 @@
 
     let usLocal = JSON.parse(window.localStorage.getItem('usObject'));
 
-    if (usLocal){
-        if (usLocal.name && usLocal.age && usLocal.sleep && usLocal.drink && usLocal.eat && usLocal.select) {
-        usName.value = usLocal.name;
-        usAge.value = usLocal.age;
-        usSleep.checked = usLocal.sleep;
-        usDrink.checked = usLocal.drink;
-        usEat.checked = usLocal.eat;
-        select.value = usLocal.select;
-    } }else {
-        usName.value = '';
-        usAge.value ='';
-        usSleep.checked ='';
-        usDrink.checked ='';
-        usEat.checked ='';
-        select.value = '';
-    }
+    usName.value = '';
+    usAge.value ='';
+    usSleep.checked ='';
+    usDrink.checked ='';
+    usEat.checked ='';
+    select.value = '';
+    usMale.checked ='';
+    usFemale.checked='';
 
-    if (usLocal){
-        if ( usLocal.gender ) {
-            genderValue = usLocal.gender;
-        } }else {
-        genderValue = '';
+    if (usLocal) {
+        if (usLocal.name) {
+            usName.value = usLocal.name;
+        }
+        if (usLocal.age) {
+            usAge.value = usLocal.age;
+        }
+        if (usLocal.sleep) {
+            usSleep.checked = usLocal.sleep;
+        }
+        if (usLocal.drink) {
+            usDrink.checked = usLocal.drink;
+        }
+        if (usLocal.eat) {
+            usEat.checked = usLocal.eat;
+        }
+        if (usLocal.select) {
+            select.value = usLocal.select;
+        }
+        if (usLocal.genderM){
+            usMale.checked = usLocal.genderM;
+        }
+        if (usLocal.genderF){
+            usFemale.checked = usLocal.genderF
+        }
     }
+    // let usMale = document.getElementById('radio_male');
+    // let usFemale = document.getElementById('radio_female');
+    // if (usLocal.genderM === 'Male') {
+    //     usMale.checked = 'checked';
+    // } else {
+    //     usFemale.checked = 'checked';
+    // }
+
+    // }
 
 
 
