@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="button">GET</button>
+
+</body>
+</html>
+<script>
+    let button = document.getElementById('button');
+
+    async function getUsers() {
+        let users = await fetch('https://jsonplaceholder.typicode.com/users');
+        let parsedUsers = await users.json();
+        return parsedUsers;
+    }
+
+    button.onclick = async function () {
+        let clickUser = await getUsers();
+        for (let people of clickUser){
+            let userDiv = document.createElement('div');
+            let moreInfo = document.createElement('button');
+            userDiv.style.background ='lightblue';
+            userDiv.style.margin ='20px';
+            moreInfo.style.margin = '10px';
+            userDiv.innerText = `${people.id} ${people.name}`;
+            moreInfo.innerText = `See more..  `;
+            userDiv.appendChild(moreInfo);
+            document.body.appendChild(userDiv);
+
+            moreInfo.onclick = function () {
+                let fullInfo = document.createElement('li');
+                let fullInfo2 = document.createElement('li');
+                moreInfo.appendChild(fullInfo);
+                moreInfo.appendChild(fullInfo2);
+                fullInfo.innerText = `Email: ${people.email} `;
+                fullInfo2.innerText =`Phone: ${people.phone}`;
+            };
+        }
+    }
+
+
+</script>
