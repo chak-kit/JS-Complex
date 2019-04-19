@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .divka {
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div style="background: red" class="divka"></div>
+    <div style="background: green" class="divka"></div>
+    <div style="background: pink" class="divka"></div>
+    <div style="background: black" class="divka"></div>
+    <div style="background: orange" class="divka"></div>
+    <button id="left">Left</button>
+    <button id="right"> Right</button>
+</div>
+
+<ul class="ditu">
+    <li>Весна</li>
+    <li>Зима</li>
+    <li>Літо</li>
+    <li>Осінь
+        <ol>
+            <li>погода
+                <ol>
+                    <li>дощ</li>
+                    <li>сонце</li>
+                </ol>
+            </li>
+            <li>свята</li>
+            <li>вихідні</li>
+        </ol>
+    </li>
+    <li>Місяці</li>
+</ul>
+<input type="button" value="forward" id="forward">
+<input type="button" value="back" id="back">
+
+</body>
+</html>
+<script>
+    /////КАРУСЕЛЬКА
+    let divArr = document.getElementsByClassName('divka');
+    const leftBtn = document.getElementById('left');
+    const rightBtn = document.getElementById('right');
+
+    ///1 Спосіб врішення
+
+    let displayedDiv = 2;
+    divArr[displayedDiv].style.display = 'block';
+    leftBtn.onclick = () => {
+        for (let i = 0; i < divArr.length; i++) {
+            divArr[i].style.display = 'none'
+        }
+        if (displayedDiv >= divArr.length - 1) {
+            displayedDiv = 0;
+        }
+        displayedDiv++;
+        divArr[displayedDiv].style.display = 'block'
+    };
+
+    rightBtn.onclick = () => {
+        for (let i = 0; i < divArr.length; i++) {
+            divArr[i].style.display = 'none'
+        }
+        if (displayedDiv >= divArr.length - 1) {
+            displayedDiv = 0;
+        }
+        displayedDiv++;
+        divArr[displayedDiv].style.display = 'block'
+    };
+
+    ///2-й Спосіб вирішення
+
+    // let j = 2;
+    // divArray[j].style.display = 'block';
+    // leftBtn.onclick = () => {
+    //     divArray[j].style.display = 'none';
+    //     j = j + 1;
+    //     console.log(j);
+    //     if (j > divArray.length - 1) {
+    //         j = 0
+    //     }
+    //     divArray[j].style.display = 'block'
+    // };
+    //
+    // rightBtn.onclick = () => {
+    //     divArray[j].style.display = 'none';
+    //     j = j - 1;
+    //     console.log(j);
+    //     if (j < 0) {
+    //         j = divArray.length - 1
+    //     }
+    //
+    //     divArray[j].style.display = 'block'
+    // };
+
+    ////////
+    let forward = document.getElementById('forward');
+    let back = document.getElementById('back');
+    let row = document.querySelectorAll('li');
+    let ol = document.getElementsByClassName('ol')[0];
+    // let olArr = [...ol];
+    let rowArr = [...row];
+    console.log(rowArr);
+    let i = 0;
+    forward.onclick = function () {
+        rowArr[i].style.background = 'none';
+        i++;
+        if (i > rowArr.length - 1) {
+            i = 0;
+        }
+        rowArr[i].style.background = 'yellow';
+    };
+    console.log(rowArr[3].lastElementChild);
+
+
+
+
+</script>
