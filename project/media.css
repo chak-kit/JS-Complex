@@ -1,0 +1,220 @@
+@media (max-width: 960px) {
+
+}
+
+@media (max-width: 768px) {
+    .hero-banner__title {
+        font-size: 48px;
+        padding-bottom: 30px;
+    }
+
+    .hero-banner__desc, .form__title {
+        font-size: 22px;
+    }
+
+    .page__title {
+        font-size: 33px;
+        word-spacing: 1.5px;
+    }
+
+    .line {
+        width: 135px;
+        border-top: 3px solid #00a5ff;
+    }
+
+    .hero-banner__link {
+        font-size: 20px;
+        padding: 18px 43px;
+    }
+
+    .name__service__title {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .service__menu {
+        margin: 50px;
+    }
+
+    .service__container {
+        margin-right: 30px;
+    }
+
+    .foto__nav__item {
+        flex: 1 1 40%;
+    }
+
+    .foto__nav__item, .foto__nav__item:nth-child(3n) {
+        margin-right: 10px;
+    }
+
+    .foto__nav__item:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .brands__list {
+        flex-wrap: wrap;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .service__icon a > img {
+        max-width: 60%;
+    }
+
+    .img__block__description, .page__container__items {
+        font-size: 20px;
+    }
+
+    .img__block__mail, .contacts__nav__link, .address__item {
+        font-size: 15px;
+    }
+
+    .img__position {
+        flex: 0 1 20%;
+    }
+
+    .main__container__item {
+        font-size: 26px;
+    }
+
+    .form__info {
+        width: 60%;
+    }
+
+    .top__button a > img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__logo > img {
+        max-width: 65%;
+    }
+
+    .nav__item + .nav__item {
+        padding-left: 20px;
+    }
+
+    .nav__link, .img__block__mail {
+        font-size: 12px;
+    }
+
+    .hero-banner__title {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+
+    .hero-banner__desc, .form__title, .main__container__item {
+        font-size: 18px
+    }
+
+    .hero-banner__link {
+        font-size: 15px;
+        padding: 15px 25px;
+    }
+
+    .service__menu {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .name__service__title {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .service__container, .foto__nav__item {
+        margin-right: 0;
+    }
+
+    .service__container {
+        flex: 1 1 63%;
+        max-width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .page__title {
+        font-size: 24px;
+        word-spacing: 1.5px;
+        line-height: 1.5;
+    }
+
+    .next__header__container {
+        margin: 0 auto;
+        width: max-content;
+    }
+
+    .foto__nav__item {
+        flex: 0 1 80%;
+
+    }
+
+    .foto__nav__item, .foto__nav__item:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .img__position {
+        flex: 0 1 15%;
+    }
+
+    .img__block {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    .img__block__nav {
+        justify-content: space-around;
+    }
+
+    .img__description {
+        width: auto;
+    }
+
+    .img__block__description, .page__container__items {
+        font-size: 17px;
+    }
+
+    .page__section {
+        padding-top: 30px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .brands__list {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .contacts__nav__link {
+        font-size: 13px;
+    }
+
+    .address__item {
+        width: 140px;
+        font-size: 11px;
+    }
+
+    .contacts__nav__item + .contacts__nav__item {
+        padding-left: 25px;
+    }
+
+    .main__container__item, .contacts__nav {
+        margin-top: 30px;
+    }
+
+    .input__text {
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+    .input__button {
+        margin-bottom: 20px;
+    }
+
+    .footer__container {
+        padding: 20px 0;
+    }
+}

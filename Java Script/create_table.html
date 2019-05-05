@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<input type="text" placeholder="row">
+<input type="text" placeholder="column">
+<input type="text" placeholder="boxing">
+<input type="text" placeholder="button" id="button">
+
+</body>
+</html>
+<script>
+    let inp1 = document.getElementsByTagName('input')[0];
+    let inp2 = document.getElementsByTagName('input')[1];
+    let inp3 = document.getElementsByTagName('input')[2];
+    let button = document.getElementById('button');
+
+    button.onclick = function () {
+        let rowNumbers = inp1.value;
+        for (let i = 0; i < rowNumbers; i++) {
+            let row = document.createElement('tr');
+            row.style.border = '1px solid black';
+            row.style.padding = '20px';
+            document.body.appendChild(row);
+            for (let i = 0; i < inp2.value; i++) {
+                let column = document.createElement('td');
+                row.appendChild(column);
+                column.style.border = '1px solid black';
+                column.style.padding = '20px';
+                column.innerText = inp3.value;
+                column.ondblclick = function () {
+                    let newInp = document.createElement('input');
+                    document.body.appendChild(newInp);
+                    newInp.value = inp3.value;
+                }
+            }
+        }
+    }
+
+
+</script>

@@ -1,87 +1,3 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-html, body {
-    font-family: "Open Sans", serif;
-    height: 100%;
-}
-
-.page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.page__container {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 0 15px;
-
-}
-
-.page__banner {
-    background: url("img/bg.jpg");
-    width: 100%;
-    background-size: cover;
-}
-
-.header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 24px 0;
-    z-index: 5;
-}
-
 .header__container {
     display: flex;
     justify-content: space-between;
@@ -129,7 +45,7 @@ html, body {
 
 .hero-banner__footer {
     width: 320px;
-    height: 72px;
+    text-align: center;
     margin: 0 auto;
 }
 
@@ -145,7 +61,7 @@ html, body {
 }
 
 .page__section {
-    padding-top: 73px;
+    padding-top: 65px;
     background: #ffffff;
 }
 
@@ -182,6 +98,7 @@ html, body {
 
 .service__container:nth-child(4) {
     margin-right: 0;
+
 }
 
 .service__icon {
@@ -206,18 +123,16 @@ html, body {
     text-transform: uppercase;
     letter-spacing: 1.35px;
     margin-bottom: 35px;
+    white-space: nowrap;
 }
-
 .service__description {
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.9px;
     font-family: "Open Sans", sans-serif;
-
     color: #999999;
     line-height: 20px;
 }
-
 .next__header__container {
     width: 570px;
     text-transform: uppercase;
@@ -246,28 +161,42 @@ html, body {
     justify-content: center;
 }
 .foto__nav__item{
-    flex: 0 1 25%;
+    flex: 1 1 25%;
     margin-right: 15px;
     margin-bottom: 15px;
     background-color: #f4f5f9;
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
 }
+.foto__nav__link>img{
+    max-width: 100%;
+    height: auto;
+}
 .foto__nav__item:nth-child(3n){
     margin-right: 0;
+}
+.foto__nav__link{
+    text-decoration: none;
 }
 .foto__title{
     font-size: 18px;
     color: #999999;
     padding: 30px;
 }
-.brands_list{
-    margin-top: 90px;
-    margin-bottom: 125px;
-}
-.brands_list{
+.brands__list{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+.brands__icon{
+    flex: 0 1 25%;
+    padding: 10px;
+    text-align: center;
+}
+.service__icon  a > img {
+    max-width: 100%;
+    height: auto;
 }
 .img__page__section{
     background: #f5f6f8;
@@ -276,12 +205,7 @@ html, body {
 .img__block{
     margin-top: 60px;
     margin-bottom: 140px;
-}
-.img__position{
-    margin-left: 80px;
-}
-.img__position:nth-child(1){
-    margin-left: 0;
+    text-align: center;
 }
 .img__block__nav{
     display: flex;
@@ -289,21 +213,21 @@ html, body {
     align-items: center;
     flex-wrap: nowrap;
 }
+.img__position{
+    flex: 0 1 17%;
+}
 .img__description{
     padding-top: 45px;
     text-align: center;
     width: 557px;
-    height: 144px;
     margin: 0 auto;
 }
-
 .img__block__description{
     font-size: 23px;
     font-family: 'Lora', sans-serif;
     color: #3a3f4b;
     line-height: 30px;
     padding-bottom: 40px;
-
 }
 .img__block__mail{
     font-family: "Open Sans", sans-serif;
@@ -317,7 +241,6 @@ html, body {
     text-decoration: none;
     border-bottom: 1px solid #3a3f4b;
 }
-
 .contacts__page{
     background:  #3b404c;
 }
@@ -367,7 +290,11 @@ html, body {
     display: flex;
 
 }
-
+.input__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .address__item{
     font-size: 18px;
     width: 307px;
@@ -379,26 +306,73 @@ html, body {
 .address__item:nth-child(2){
     padding-top: 0;
 }
-.right__column{
-    width: 100%;
-    margin-left: 250px;
-
+.form__info{
+    margin-top: 100px;
+    width: 65%;
 }
-
-.right__column__title{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    height: 100%;
-
-}
-.right__column__item{
-
-flex-basis: 303px;
-    height: 20px;
+.form__title{
+    display: block;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     font-size: 26px;
+    line-height: 40px;
+}
 
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.input__details:nth-child(2){
+    padding-left: 50px;
+}
+.form__details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 55px;
+}
+.input__details{
+    width: 100%;
+
+}
+.input__text{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #737070;
+    color: #f2f2f2;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin-top: 35px;
+}
+.input__button{
+    margin-top: -20px;
+    margin-bottom: 70px;
+}
+.top__button{
+    position: absolute;
+    margin-top: -28px;
+    left:50%;
+    transform: translateX(-50%) ;
+    text-align: center;
+}
+.top__button a > img{
+    max-width: 100%;
+    height: auto;
+}
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+}
+.footer__nav{
+    display: flex;
+    align-items: center;
+}
+.footer__info{
+    margin-left: 10px;
+    text-align: center;
 }

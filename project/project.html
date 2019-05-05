@@ -6,7 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
     <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans" rel="stylesheet">
 
 
@@ -153,27 +155,27 @@
                 <nav class="header__nav">
                     <ul class="nav__foto">
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here1.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here1.png">
                                 <h3 class="foto__title">Agency-PSD Template</h3></a>
                         </li>
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here2.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here2.png">
                                 <h3 class="foto__title">Pure Vodka Branding</h3></a>
                         </li>
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here3.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here3.png">
                                 <h3 class="foto__title"> Web Design</h3></a>
                         </li>
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here4.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here4.png">
                                 <h3 class="foto__title"> Everest Logo </h3></a>
                         </li>
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here5.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here5.png">
                                 <h3 class="foto__title"> Poster Design </h3></a>
                         </li>
                         <li class="foto__nav__item">
-                            <a class="nav__link" href=""><img src="./img/Image_here6.png">
+                            <a class="foto__nav__link" href=""><img src="./img/Image_here6.png">
                                 <h3 class="foto__title"> Illustration</h3></a>
                         </li>
                     </ul>
@@ -194,23 +196,23 @@
                 <h2 class="page__title">Recent brands we've worked with</h2>
                 <div class="line"></div>
             </div>
-            <div class="brands_list">
-                <div class="brend__foto">
+            <div class="brands__list">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_1.png "></a>
                 </div>
-                <div class="brend__foto">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_2.png "></a>
                 </div>
-                <div class="brend__foto">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_3.png "></a>
                 </div>
-                <div class="brend__foto">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_4.png "></a>
                 </div>
-                <div class="brend__foto">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_5.png "></a>
                 </div>
-                <div class="brend__foto">
+                <div class="brands__icon service__icon">
                     <a href="#"><img src="./img/Layer_6.png "></a>
                 </div>
             </div>
@@ -226,9 +228,9 @@
 
             <div class="img__block">
                 <div class="img__block__nav">
-                    <div class="img__position"><img src="./img/image1.png"></div>
-                    <div class="img__position"><img src="./img/image2.png"></div>
-                    <div class="img__position"><img src="./img/image3.png"></div>
+                    <div class="img__position service__icon"><img src="./img/image1.png"></div>
+                    <div class="img__position service__icon"><img src="./img/image2.png"></div>
+                    <div class="img__position service__icon"><img src="./img/image3.png"></div>
                 </div>
                 <div class="img__description">
                     <p class="img__block__description">
@@ -262,35 +264,75 @@
                     </li>
                 </ul>
             </div>
-            <nav class="address__nav">
-                <ul class="contacts__container">
-                    <li class="page__container__items"> Our address <span class="address__item">House No, 11132, Sector 31, Guraon 122001 India</span>
-                    </li>
-                    <li class="page__container__items"> Call us <span class="address__item"> +91-9876543210</span> <span
-                            class="address__item"> +01262219018 </span></li>
-                    <li class="page__container__items"> Email us<span class="address__item"> contactus@email.com</span>
-                    </li>
-                </ul>
-                <div class="right__column">
-                    <div class="right__column__title">
-                        <h3 class="right__column__item">Name:</h3>
-                        <h3 class="right__column__item">Subject:</h3>
-                        <h3 class="right__column__item">Your Message:</h3>
-                        <div class="hero-banner__footer">
+            <div class="input__container">
+                <nav class="address__nav">
+                    <ul class="contacts__container">
+                        <li class="page__container__items"> Our address <span class="address__item">House No, 11132, Sector 31, Guraon 122001 India</span>
+                        </li>
+                        <li class="page__container__items"> Call us <span class="address__item"> +91-9876543210</span>
+                            <span
+                                    class="address__item"> +01262219018 </span></li>
+                        <li class="page__container__items"> Email us<span
+                                class="address__item"> contactus@email.com</span>
+                        </li>
+                    </ul>
+
+
+                </nav>
+                <div class="form__info">
+                    <form class="form">
+                        <div class="form__details">
+                            <div class="input__details">
+                                <label for="us__name"><span class="form__title">Name:</span></label>
+                                <input type="text" id="us__name" class="input__text">
+                            </div>
+                            <div class="input__details">
+                                <label for="us__subject"><span class="form__title">Subject:</span></label>
+                                <input type="text" id="us__subject" class="input__text">
+                            </div>
+                        </div>
+                        <div class="form__details">
+                            <div class="input__details">
+                                <label for="us__message"><span class="form__title">Your Message:</span>
+                                    <textarea id="us__message" class="input__text" rows="4"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input__button">
                             <a href="#" class="hero-banner__link">
                                 Send message
                             </a>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
-
-
-            </nav>
-
-
+            </div>
         </div>
     </section>
-
+    <footer>
+        <div class="page__container">
+            <div class="top__button">
+                <a href="#top"><img src="./img/button.png"></a>
+            </div>
+            <div class="footer__container">
+                <a href="#"><img src="./img/MEGATRON_©_2015_OSTH.png"> </a>
+                <div class="footer__nav">
+                    <div class="footer__info service__icon">
+                        <a href="#"><img src="./img/fb.png"></a>
+                    </div>
+                    <div class="footer__info service__icon">
+                        <a href="#"><img src="./img/twitter.png"></a>
+                    </div>
+                    <div class="footer__info service__icon">
+                        <a href="#"><img src="./img/Composite_Path.png"></a>
+                    </div>
+                    <div class="footer__info service__icon">
+                        <a href="#"><img src="./img/linkedin.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </div>
 

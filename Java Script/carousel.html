@@ -26,22 +26,22 @@
 </div>
 
 <ul class="ditu">
-    <li>Весна</li>
-    <li>Зима</li>
-    <li>Літо</li>
-    <li>Осінь
+    <li><span>Весна</span></li>
+    <li><span>Зима</span></li>
+    <li><span>Літо</span></li>
+    <li><span>Осінь</span>
         <ol>
-            <li>погода
+            <li><span>погода</span>
                 <ol>
-                    <li>дощ</li>
-                    <li>сонце</li>
+                    <li><span>дощ</span></li>
+                    <li><span>сонце</span></li>
                 </ol>
             </li>
-            <li>свята</li>
-            <li>вихідні</li>
+            <li><span>свята</span></li>
+            <li><span>вихідні</span></li>
         </ol>
     </li>
-    <li>Місяці</li>
+    <li><span>Місяці</span></li>
 </ul>
 <input type="button" value="forward" id="forward">
 <input type="button" value="back" id="back">
@@ -115,12 +115,15 @@
     console.log(rowArr);
     let i = 0;
     forward.onclick = function () {
-        rowArr[i].style.background = 'none';
+        rowArr[i].firstElementChild.style.background = 'none';
         i++;
         if (i > rowArr.length - 1) {
             i = 0;
         }
-        rowArr[i].style.background = 'yellow';
+
+        // rowArr[i].style.background = 'yellow';
+        rowArr[i].firstElementChild.style.background = 'blue';
+        console.log(i);
     };
     console.log(rowArr[3].lastElementChild);
 
