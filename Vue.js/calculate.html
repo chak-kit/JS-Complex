@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function add(num1, num2) {
+        return num1 + num2
+    }
+
+    function minus(num1, num2) {
+        return num1 - num2
+    }
+
+    function divide(num1, num2) {
+        if (num2 === 0) {
+            throw new Error('Can not divide by zero')
+        }
+        return num1 / num2
+    }
+
+    function multiply(num1, num2) {
+        return num1 * num2
+    }
+
+    let calculate = function (num1, num2, option) {
+        let stronNum1 = checkNumber(num1);
+        let strongNum2 = checkNumber(num2);
+
+        let strongOption = option.trim();
+        if (strongOption === '+') {
+            return add(stronNum1, strongNum2)
+        } else if (strongOption === '-') {
+            return minus(stronNum1, strongNum2)
+        } else if (strongOption === '/') {
+            return divide(stronNum1, strongNum2)
+        } else if (strongOption === '*') {
+            return multiply(stronNum1, strongNum2)
+        } else {
+            throw new Error('Wrong option')
+        }
+    };
+
+    function checkNumber(num) {
+        if (num.trim().length === 0 || isNaN(+num)) {
+            throw new Error('You must write a number')
+        }
+        return +num;
+    }
+
+    function control(num1, num2, option) {
+        try {
+            let result = calculate(num1, num2, option);
+            console.log(result)
+        } catch (e) {
+            alert(e)
+        }
+    }
+
+    control('   -9  ', '80', "   +");
+
+</script>
