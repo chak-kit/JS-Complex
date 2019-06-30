@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typewriter</title>
+</head>
+<body>
+<!--//Зробити симулятор друкарської машинки.-->
+<!--//У вас є інпут, куди потрібно ввести текст і кнопка submit-->
+<!--//При натисканні на кнопку Submit спрацьовує функція, яка з інтервалом від 0.2 до 0.7 секунди пише 1 символ на екран.-->
+<!--//Має бути ефект ніби це пише людина.-->
+<!--//Коли весь текст введено видати будь яке сповіщення на екран, яке вкаже, що дію завершено.-->
+
+    <label for="text">Write some text: </label>
+    <input type="text" id="text">
+    <input type="submit" value="SUBMIT" id="send">
+
+</body>
+</html>
+<script>
+    let text = document.getElementById('text');
+    let send = document.getElementById('send');
+
+
+    send.onclick = function () {
+        let div = document.createElement('div');
+        document.body.appendChild(div);
+        let textValue = text.value;
+
+        function print(str, i) {
+            let symbolToprint = str.slice(0, i);
+            let printTime = Math.random() * (700 - 200) + 200;
+            div.innerText = symbolToprint;
+
+            if (i <= str.length) {
+                setTimeout(function () {
+                    print(str, ++i);
+                }, printTime);
+            } else {
+                alert("Done")
+            }
+        }
+
+        print(textValue, 1);
+    }
+
+</script>

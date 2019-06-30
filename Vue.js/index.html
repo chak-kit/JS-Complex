@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="calc.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <input type="text" v-model="num1" placeholder="num1" name="num1">
+    <input type="text" v-model="num2" placeholder="num2" name="num2">
+    <input type="text" v-model="operation" placeholder="operation" name="operation">
+    <input type="submit" value="submit" @click = "show()">
+    <h2 @click = "remove(res)"> Result: {{res}}</h2>
+    <input type="button" value="clear" @click = "clear()">
+
+</div>
+
+</body>
+</html>
+<script>
+    let vue = new Vue({
+        el: '#app',
+        data: {
+            num1: ' ',
+            num2: ' ',
+            operation: ' ',
+            res: ' '
+
+        },
+        methods:{
+            show: function(){
+                try {
+                    let result = calculate(this.num1, this.num2, this.operation);
+                    console.log(result);
+                    this.res = result;
+                } catch (e) {
+                    alert(e)
+                }
+            },
+            clear: function () {
+                this.res = '';
+            },
+            remove: function (res) {
+                this.res = '';
+            }
+
+        }
+    })
+
+
+</script>

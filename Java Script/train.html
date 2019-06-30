@@ -48,10 +48,40 @@
     });
     console.log(res);
 
+let array = [4,5,2,2,8,9,8,2,1,4,1,4,9];
+    let resalt = array.sort(function (min, max) {
+        return min  - max ;
+    });
+    console.log(resalt);
 
 
+    function getRandom(n) {
+        let numbers =[];
+        for (let i = 0; i < n; i++) {
+            let a = Math.floor(Math.random() * 100000);
+            numbers.push(a);
+        }
+        return numbers;
+    }
+    let a = getRandom(10);
+    console.log(a);
 
 
+    let r = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+    console.log(r);
+
+    let row= Array(40).fill().map(() => Math.round(Math.random() * 40));
+    console.log(row);
+
+    let tools = Array.from({length: 10}, function () {
+        return  Math.floor(Math.random() * 1000000)
+    });
+    console.log(tools);
+
+    const numbers = Array.from({ length: 5 },function (e,p) {
+        return p
+    });
+    console.log(numbers);
 </script>
 
 </body>
